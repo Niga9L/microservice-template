@@ -16,6 +16,13 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@infrastructure/*": ["src/item/infrastructure/*"],
+      "@domain/*": ["src/item/domain/*"],
+      "@application/*": ["src/item/application/*"],
+      "@database/*": ["src/database/*"],
+      "@test/*": ["test/*"]
+    }
   }
 }

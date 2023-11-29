@@ -1,10 +1,18 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
+
+import { DatabaseModule } from './database/database.module';
+import { HealthModule } from './health/health.module';
+import { ItemModule } from './item/item.module';
+import { EventStoreWrapperModule } from './event-store/event-store-wrapper.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot(),
+    DatabaseModule,
+    EventStoreWrapperModule,
+    HealthModule,
+    ItemModule,
+  ],
 })
 export class AppModule {}
